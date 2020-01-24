@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="test" method="post">
+email<br>
+<input type="email" name="u_email" required><br>
+gender<br>
+male<input type="radio" value="male" name="u_gender" checked="checked">
+female<input type="radio" value="female" name="u_gender"><br>
+area of interest<br>
+c<input type="checkbox" name="u_int" value="c">
+os<input type="checkbox" name="u_int" value="os">
+ds<input type="checkbox" name="u_int" value="ds">
+da<input type="checkbox" name="u_int" value="da">
+dbms<input type="checkbox" name="u_int" value="dbms"><br>
+description<br>
+<textarea rows="10" cols="40" name="u_desc" required></textarea><br>
+<input type="submit" value="save data">
+</form>
+<hr>
+<form action="1" method="get">
+<i>choose your option</i>
+<select name="choice">
+	<option>include v1.0</option>
+	<option>include v2.0</option>
+	<option>forward</option>
+</select>
+<input type="submit" value="test-it">
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+
+public interface ABC
+{
+	void a();
+	default void b() // jdk1.7 mai nahin thi
+	{
+		System.out.println("b");
+	}
+	static  void c() // jdk1.7 mai nahin thi
+	{
+		System.out.println("c");
+	}
+	int d = 0;
+	
+	public static void main(String[] args)
+	{
+		System.out.println("main of interface ");
+		ABC.c();
+	}
+}

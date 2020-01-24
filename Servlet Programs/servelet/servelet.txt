@@ -1,0 +1,9 @@
+1. create a dynamic web project 
+
+2. create a public class inside src folder this class should inherit either GenericServlet of HttpServlet (good is HttpServlet : javax.servlet.http package)
+
+3. define a method name of method must be service
+public void service(HttpServletRequest x,HttpServletResponse y)
+
+
+http://localhost:8088/first-web-app/hello
