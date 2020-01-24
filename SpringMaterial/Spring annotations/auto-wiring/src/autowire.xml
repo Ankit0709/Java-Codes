@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+ "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<!--  for org.springframework.context.support.PropertySourcesPlaceholderConfigurer -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:com/cetpa/beans/info.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- DI for the Car -->
+	<bean name="c" class="com.cetpa.beans.Car">
+		<property name="name" value="${car-name}"/>
+		<property name="maker" value="Maruti Suzuki"/>
+		<property name="model" value="2017"/>
+	</bean>
+	
+	<!-- DI for the Person -->
+	<bean name="p" class="com.cetpa.beans.Person" autowire="byType">
+		<property name="fullName" value="Ankit"/>
+		<property name="emailId" value="ankit@sapna.com"/>
+	</bean>
+
+
+
+</beans>

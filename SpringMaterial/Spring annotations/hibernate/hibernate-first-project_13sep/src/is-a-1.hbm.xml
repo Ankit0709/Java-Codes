@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+	<hibernate-mapping package="com.cetpa.beans">
+	
+	<!-- mapping for the Payment -->
+	<class name="Payment" table="t_4_payment">
+		<id name="id" column="payment_id">
+			<generator class="increment">
+			</generator>
+		</id>
+		<!-- this is the column that will diffren-she-8 the types of payment  -->
+		<discriminator column="type_of_payment"/>
+		<property name="productName" column="product_name"/>
+		<property name="productCost" column="product_cost"/>
+		
+		<!-- mapping for the Card -->
+		<subclass name="PaymentByCard"  discriminator-value="By_Card">
+			<property name="number" column="card_number"/>
+			<property name="cvv" column="card_cvv"/>
+		</subclass>
+
+		<!-- mapping for the Cheque -->
+		<subclass name="PaymentByCheque" discriminator-value="By_Cheque">
+			<property name="chNumber" column="cheque_number"/>
+		</subclass>
+
+		<!-- mapping for the Cheque -->
+		<subclass name="PaymentByCash" discriminator-value="By_Cash">
+			<property name="deno" column="cash_info_of_notes"/>
+		</subclass>
+		
+	</class>
+	
+	</hibernate-mapping>

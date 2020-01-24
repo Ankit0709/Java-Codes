@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Main Page</title>
+<script src="js/jquery.min.js"></script>
+
+</head>
+<body onload="mainPageLoader()">
+<center>
+	<input type="text" name="search" id="search" onchange="searchData()"> 
+	<div id="main">
+	</div>
+</center>
+
+
+<script>
+	function mainPageLoader() 
+	{
+		$.ajax({
+			type:"POST",
+			url:"home.jsp",
+			success:function(data){
+				var main = document.getElementById("main");
+				main.innerHTML = data;
+			}
+		});	
+	}
+	
+	function searchData() 
+	{
+		var field = document.getElementById("search");
+		var fieldData = field.value;
+		//alert(fieldData);
+		 $.ajax({
+			type:"POST",
+			url:"filterData.jsp",
+			data:"name="+fieldData,
+			success:function(data){
+				var main = document.getElementById("main");
+				main.innerHTML = data;
+			}
+		});
+	}
+</script>
+
+
+</body>
+</html>
