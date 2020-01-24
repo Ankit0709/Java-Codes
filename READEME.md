@@ -1,1 +1,1 @@
-"# Java Codes"
+This repository contains Java Codes.
